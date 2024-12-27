@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.banner{
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/cyber-attack-.gif);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo{
+    width: 200px;
+    cursor: pointer;
+    color: black;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.content h1{
+    font-size: 50px;
+    margin-top: 20px;
+}
+.content p{
+    margin: 10px auto;
+    font-weight: 100;
+    line-height: 20px;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+.metin{
+    position: left;
+    color: white;
+}
+.metin h1{
+    font-size: 20px;
+    text-align: center;
+    color: cadetblue;
+}
+.metin p{
+    font-size: 15px;
+    color: white;
+}
+.footer{
+    color: black;
+    margin-bottom: 20px;
+    border-top: 2px solid #009688;
+    background-color: black;
+}
+.footer_h1{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+.home-sci{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.home-sci::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #009688;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #009688;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+.home-sci a:hover{
+    color: black;
+}
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #009688;
+    z-index: -1;
+    transition: .5s;
+}
+.home-sci a:hover::before{
+    width: 100%;
+}
+@keyframes showRight{
+    100%{
+        width: 0;
+    }
+}
+section{
+    background-color: black;
+}
+.test{
+    padding-top: 5px;
+    display:flex;
+    justify-content: center;
+    background-color: black;
+    gap: 20px;
+}
+.text{
+    background-color: black;
+    margin: 5px;
+}
+.text h1{
+    font-size: 20px;
+    color: cadetblue;
+    text-align: center;
+    justify-content: center;
+}
+.text p{
+    font-size: 15px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.section{
+    background-color: black;
+}
+.section .alt-taraf h1{
+    color: cadetblue;
+    justify-content: center;
+    text-align: center;
+}
+.section .alt-taraf p{
+    color: white;
+    float: left;
+}
+.metin{
+    background-color: black;
+}
+.metin h1{
+    font-size: 20px;
+    color: cadetblue;
+    justify-content: center;
+    text-align: center;
+}
+.metin p{
+    font-size: 15px;
+    color: white;
+    float: left;
+}
+.metin{
+    background-color: black;
+}
+.makale h1{
+    font-size: 20px;
+    color: cadetblue;
+}
+.makale p{
+    font-size: 15px;
+    color: white;
+}
+.alt-taraf p{
+    display: flexbox;
+    font-size: 15px;
+}

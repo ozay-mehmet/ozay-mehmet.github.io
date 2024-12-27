@@ -1,0 +1,151 @@
+body, h1, h2, p, ul{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+header{
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+span{
+    color: aqua;
+}
+.menu-toggle{
+    display: none;
+}
+.menu-icon{
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+.all-links{
+    list-style: none;
+    display: flex;
+}
+.all-links li{
+    margin-left: 20px;
+}
+.all-links a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.all-links a:hover{
+    color: aqua;
+}
+.all-links a.active{
+    color: aqua;
+}
+.home-page{
+    padding: 80px 20px;
+    text-align: center;
+}
+.home-page h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.home-page p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+section{
+    padding: 10px 10px;
+}
+section h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+section p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    list-style-type: none;
+    width: calc(33.333% - 20px);
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card h3{
+    text-align: center;
+}
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+.card {
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.08);
+}
+.contact{
+    background-color: #333;
+    color: white;
+}
+.contact h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.contact p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.detay{
+    margin-left: 10px;
+}
+footer{
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+footer a{
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+footer a:hover{
+    color: aqua;
+}
