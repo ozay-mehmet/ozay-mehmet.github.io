@@ -2,26 +2,26 @@ class Enemy {
   static DEFAULT_WIDTH = 250;
   static DEFAULT_HEIGHT = 300;
   static GROUND_Y_OFFSET = -20;
-  static HEALTH_BAR_OFFSET_Y = 15;
-  static HEALTH_BAR_HEIGHT = 10;
-  static DEFAULT_ANIMATION_FRAME_DURATION_MS = 150;
-  static ATTACK_RANGE_MULTIPLIER = 0.8;
-  static ENEMY_COUNT = 3;
+  static HEALTH_BAR_OFFSET_Y = 15; // sağlık çubuğunun düşman resminin üstünde görünmesi için gereken boşluk
+  static HEALTH_BAR_HEIGHT = 10;  // sağlık çubuğunun yüksekliği
+  static DEFAULT_ANIMATION_FRAME_DURATION_MS = 150; // animasyon karelerinin süresi
+  static ATTACK_RANGE_MULTIPLIER = 0.8;  // saldırı menzili 
+  static ENEMY_COUNT = 10; // düşman sayısı
 
   constructor(x,y, canvasHeight) {
     this.canvasHeight = canvasHeight;
     this.width = Enemy.DEFAULT_WIDTH;
     this.height = Enemy.DEFAULT_HEIGHT;
-    this.x = x ?? (canvasHeight ? canvasHeight + Math.random() * 100 : 800);
-    this.y = canvasHeight ? canvasHeight - this.height - Enemy.GROUND_Y_OFFSET : 300 - this.height - Enemy.GROUND_Y_OFFSET;
+    this.x = x ?? (canvasHeight ? canvasHeight + Math.random() * 100 : 800); // başlangıç x koordinatı
+    this.y = canvasHeight ? canvasHeight - this.height - Enemy.GROUND_Y_OFFSET : 300 - this.height - Enemy.GROUND_Y_OFFSET; // başlangıç y koordinatı
     this.direction = -1;
 
     this.animations = {};
-    this.spriteImages = {};
+    this.spriteImages = {}; // animasyon karelerinin resimleri
     this.currentAnimationName = 'walk';
     this.currentFrame = 0;
     this.frameTimer = 0;
-    this.animationFrameDuration = Enemy.DEFAULT_ANIMATION_FRAME_DURATION_MS;
+    this.animationFrameDuration = Enemy.DEFAULT_ANIMATION_FRAME_DURATION_MS; // animasyon karelerinin süresi
     this.animationLoops = true;
     this.initialImageLoaded = false;
     this.image = null;
@@ -38,6 +38,7 @@ class Enemy {
     this.actionInterval = this.getRandomInterval();
   }
 
+  // Düşman karakterlerinin tanımlanması
   getEnemyTypes() {
     return [
       {
@@ -82,6 +83,7 @@ class Enemy {
     ];
   }
 
+  // Düşman animasyon resimlerinin yüklenmesi 
   async preloadAnimationImages() {
     this.initialImageLoaded = false;
     let firstImageToLoadPath = null;
@@ -111,6 +113,7 @@ class Enemy {
     }
   }
 
+  // Düşman türünün belirlenmesi - Default olarak Mehmet Özay
   setEnemyType() {
     const typeData = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
     if (!typeData) {
@@ -139,6 +142,7 @@ class Enemy {
     });
   }
 
+  // Düşman animasyonlarının ayarlanması
   setCurrentAnimation(animName, loop = true) {
     if (this.isDead && animName !== 'death') return;
     if (this.currentAnimationName === animName && this.animationLoops === loop) return;
@@ -176,6 +180,7 @@ class Enemy {
     return Math.random() * 2000 + 1500;
   }
 
+  // Düşmanın resminin çizilmesi
   draw(ctx) {
     if (this.isVanished) return;
     if (this.isDead && this.currentAnimationName === 'death' && !this.animationLoops && this.spriteImages.death && this.currentFrame >= this.spriteImages.death.length - 1) {
@@ -216,6 +221,7 @@ class Enemy {
     ctx.restore();
   }
 
+  // Düşmanın güncellenmesi
   update(player, deltaTime) {
     if (this.isVanished) return;
     if (this.isDead && this.currentAnimationName === 'death') {
@@ -271,6 +277,7 @@ class Enemy {
     }
   }
 
+  // Düşmanın çarpışma kontrolü
   collidesWith(entity) {
     if (this.isDead || (entity.isDead !== undefined && entity.isDead)) return false;
     return (
@@ -281,6 +288,7 @@ class Enemy {
     );
   }
 
+  // Düşmanın hasar alması
   takeDamage(amount) {
     this.health -= amount;
     if (this.isDead) 
@@ -300,6 +308,7 @@ class Enemy {
       this.setCurrentAnimation('death', false);
   }}
 
+  // Düşmanın oyun ekranından kaybolması
   reset(canvasHeight, newX) {
     this.canvasHeight = canvasHeight;
     this.x = newX ?? (canvasHeight + Math.random() * 100);
