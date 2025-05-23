@@ -1,9 +1,10 @@
 let stars = [];
-const STAR_COUNT = 500;
+const STAR_COUNT = 500; // Yıldız sayısı
 let starCanvas, starCtx, animationId, loadingScreenDiv, progressBarFill, progressInterval;
 let currentProgress = 0;
 const LOAD_DURATION = 3000;
 
+// Yıldızların boyutları ve sayısı
 function initializeLoadingScreen() {
     loadingScreenDiv = document.createElement('div');
     loadingScreenDiv.id = 'loadingScreen';
@@ -14,6 +15,7 @@ function initializeLoadingScreen() {
     });
     document.body.appendChild(loadingScreenDiv);
 
+    // canvas oluşturma
     starCanvas = document.createElement('canvas');
     starCanvas.width = window.innerWidth;
     starCanvas.height = window.innerHeight;
@@ -23,13 +25,15 @@ function initializeLoadingScreen() {
     loadingScreenDiv.appendChild(starCanvas);
     starCtx = starCanvas.getContext('2d');
 
+    // yükleniyor ekranı 
     const loadingText = document.createElement('div');
-    loadingText.textContent = 'YÜKLENİYOR...';
+    loadingText.textContent = 'LOADING...';
     Object.assign(loadingText.style, {
         color: 'white', font: '30px Arial', textShadow: '0 0 10px #fff', marginBottom: '20px'
     });
     loadingScreenDiv.appendChild(loadingText);
 
+    // progress bar çubuğu 
     const progressBarContainer = document.createElement('div');
     Object.assign(progressBarContainer.style, {
         width: '60%', maxWidth: '400px', height: '20px',
@@ -43,12 +47,14 @@ function initializeLoadingScreen() {
         borderRadius: '10px', transition: 'width 0.1s linear'
     });
     progressBarContainer.appendChild(progressBarFill);
-
+ 
+    // animasyonların başlatılması
     createStars();
     animateStars();
     startProgressAnimation();
 }
 
+// Yıldızların animasyonunu başlatma
 function startProgressAnimation() {
     currentProgress = 0;
     progressBarFill.style.width = '0%';
@@ -70,6 +76,7 @@ function startProgressAnimation() {
     }, 100);
 }
 
+// Yıldızların oluşturulması
 function createStars() {
     stars = [];
     if (!starCanvas) return;
@@ -84,6 +91,7 @@ function createStars() {
     }
 }
 
+// Yıldızların animasyonu
 function animateStars() {
     if (!starCtx || !starCanvas || !loadingScreenDiv || loadingScreenDiv.style.display === 'none') {
         if (animationId) cancelAnimationFrame(animationId);
