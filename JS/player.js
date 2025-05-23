@@ -2,15 +2,16 @@ class Player {
   static DEFAULT_WIDTH = 200;
   static DEFAULT_HEIGHT = 200;
   static DEFAULT_HEALTH = 100;
-  static ATTACK_COOLDOWN_MS = 1;
-  static ATTACK_DURATION_MS = 300;
+  static ATTACK_COOLDOWN_MS = 1; // saldırı bekleme süresi
+  static ATTACK_DURATION_MS = 300; // saldırı süresi
   static JUMP_VELOCITY = -12;
   static GRAVITY = 0.6;
   static GROUND_Y_OFFSET = 50;
   static HEALTH_BAR_OFFSET_Y = 20;
   static HEALTH_BAR_HEIGHT = 10;
-  static VELOCITY_DIVISOR = 10;
+  static VELOCITY_DIVISOR = 10; // hız 
 
+  // karakter tanımları
   static getPlayerTypes() {
     return [
       {
@@ -275,6 +276,7 @@ class Player {
     }
   }
 
+  // karakterin türünü ayarlama
   setPlayerType(characterName) {
     const types = Player.getPlayerTypes();
     let typeData = types.find(t => t.name === characterName);
@@ -292,6 +294,7 @@ class Player {
     });
   }
 
+  // animasyon ayarları
   setCurrentAnimation(animName, loop = true) {
     if (this.isDead && animName !== 'death') return;
     if ((this.currentAnimationName === 'jump' && animName === 'jump' && !this.animationLoops) ||
@@ -323,6 +326,7 @@ class Player {
     }
   }
 
+  // karakterin görüntüsünün çizilmesi
   drawCharacterImage(ctx, imageToDraw) {
     ctx.save();
     if (this.direction === -1) {
@@ -334,6 +338,7 @@ class Player {
     ctx.restore();
   }
 
+  // sağlık çubuğunun çizilmesi
   drawHealthBar(ctx) {
     ctx.save();
     ctx.fillStyle = "grey";
@@ -366,6 +371,7 @@ class Player {
     this.drawHealthBar(ctx);
   }
 
+  // tuşlara basıldığında karakterin hareketinin ayarlanması
   handleKeyDown(e) {
     if (this.isDead) return;
     switch (e.key.toLowerCase()) {
@@ -411,6 +417,7 @@ class Player {
     }
   }
 
+  // saldırı 
   attack() {
     if (this.isDead || this.isAttacking) return;
     const now = Date.now();
@@ -419,9 +426,13 @@ class Player {
       this.lastAttackTime = now;
       this.setCurrentAnimation('attack', false);
       this.velocityX = 0;
+      this.attackSound = new Audio("./assets/audio/attack.mp3");
+      this.attackSound.volume = 0.5;
+      this.attackSound.play();
     }
   }
 
+  // hasar alma 
   takeDamage(amount) {
     if (this.isDead) return;
     this.health -= amount;
@@ -434,6 +445,7 @@ class Player {
     }
   }
 
+  // ölme fonksiyonu
   die() {
     if (!this.isDead) {
       this.isDead = true;
@@ -444,6 +456,7 @@ class Player {
     }
   }
 
+  // oyun bittikten sonra karakterin güncellenmesi 
   update(canvasHeight) {
     if (this.isDead && this.currentAnimationName === 'death') {
       const deathAnimFrames = this.spriteImages.death;
