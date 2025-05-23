@@ -1,0 +1,73 @@
+@import 'game_menu.css';
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1;
+}
+
+#loading h2{
+    font-size: 70px;
+    margin-bottom: -30px;
+}
+
+#loading p{
+    font-size: 50px;
+}
+
+#loading-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #333;
+    border: 1px solid #fff;
+    margin-top: 20px;
+}
+#loading-progress {
+    width: 0%;
+    height: 100%;
+    background-color: #0f0;
+    transition: width 0.3s;
+}
+
+@media (max-width: 900px) {
+    canvas {
+        width: 100vw !important;
+        height: 75vw !important;
+        max-width: 100vw;
+        max-height: 75vw;
+    }
+    #loading h2 {
+        font-size: 40px;
+    }
+    #loading p {
+        font-size: 30px;
+    }
+    #loading-bar {
+        width: 70vw;
+        max-width: 300px;
+    }
+}
