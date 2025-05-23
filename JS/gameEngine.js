@@ -14,6 +14,7 @@ class GameEngine {
     this.lastEnemySpawnTime = 0;
     this.enemySpawnInterval = 3000;
 
+    // arka plan resimleri
     this.backgroundImages = [
       "./assets/background-images/cloud.png",
       "./assets/background-images/forest.png",
@@ -32,6 +33,7 @@ class GameEngine {
     this.eventListenersSet = false;
     this.onReturnToMenu = config.onReturnToMenu || null;
 
+    // Müzik dosyaları
     this.gameMusic = new Audio("./assets/audio/game-music.mp3");
     this.wonMusic = new Audio("./assets/audio/you-won.mp3");
     this.gameMusic.loop = true;
@@ -68,6 +70,7 @@ class GameEngine {
     this.spawnEnemy();
   }
 
+  // Oyun döngüsü
   setupEventListeners() {
     this.boundHandleKeyDown = this.handleKeyDown.bind(this);
     this.boundHandleKeyUp = this.handleKeyUp.bind(this);
@@ -80,6 +83,7 @@ class GameEngine {
     window.removeEventListener('keyup', this.boundHandleKeyUp);
   }
 
+  // Klavye olaylarının işlenmesi
   handleKeyDown(e) {
     if ((this.gameOver || this.gameWon) && e.key.toLowerCase() === 'r') {
       this.restart();
@@ -101,6 +105,7 @@ class GameEngine {
     }
   }
 
+  // Düşman oluşturma
   spawnEnemy() {
     const enemyX = this.width + Math.random() * 10;
     const enemy = new Enemy(enemyX, 0, this.height);
@@ -176,6 +181,7 @@ class GameEngine {
     this.gameWon = Enemy.ENEMY_COUNT <= 0;
   }
 
+  // Oyun döngüsü
   render() {
     this.ctx.clearRect(0, 0, this.width, this.height);
 
@@ -220,6 +226,7 @@ class GameEngine {
     }
   }
 
+  // Oyun döngüsünün başlatılması
   gameLoop() {
     if (!this.isRunning) return;
     this.update();
