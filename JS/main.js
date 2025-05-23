@@ -11,6 +11,7 @@ class GameLauncher {
     this.characters = Player.getPlayerTypes();
     this.characterImages = [];
 
+    // giriş müziğinin ayarlanması
     this.menuMusic = new Audio("./assets/audio/giris.mp3");
     this.menuMusic.loop = true;
 
@@ -36,6 +37,7 @@ class GameLauncher {
     else if (oldScene === 'menu') this.pauseMenuMusic();
   }
 
+  // canvas oluşturma
   createCanvas() {
     this.gameCanvas = document.getElementById('gameCanvas');
     if (!this.gameCanvas) {
@@ -63,7 +65,6 @@ class GameLauncher {
     };
     this.menuMusic.load();
   }
-
 
   playMenuMusic() {
     if (this.menuMusicLoaded && this.menuMusic.paused && this.scene === 'menu') {
@@ -119,6 +120,7 @@ class GameLauncher {
           this.nextCharacter();
         }
         break;
+      // ayarlar ekranı
       case 'settings':
         if (this.isInside(x, y, this.buttons.back)) {
           this.scene = 'menu';
@@ -164,6 +166,7 @@ class GameLauncher {
     requestAnimationFrame(() => this.gameLoop());
   }
 
+  // pencere boyutunu ayarlanması
   handleResize() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
@@ -367,6 +370,7 @@ class GameLauncher {
     });
   }
 
+  // butonlara gölge ve kenar çizgisi eklenmesi
   drawStyledButton(btn, borderRadius = 8) {
     if (!btn) return;
     this.ctx.fillStyle = btn.bgColor || "rgba(0, 0, 0, 0.5)";
