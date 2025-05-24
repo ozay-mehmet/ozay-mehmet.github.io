@@ -426,6 +426,8 @@ class Player {
       this.lastAttackTime = now;
       this.setCurrentAnimation('attack', false);
       this.velocityX = 0;
+
+      // saldırı için ses dosyası 
       this.attackSound = new Audio("./assets/audio/attack.mp3");
       this.attackSound.volume = 0.5;
       this.attackSound.play();
