@@ -2,14 +2,11 @@
 
 > *A pixel-art adventure through the stars. Narrative-rich, action-packed, and beautifully nostalgic.*
 
-🧭 **Tür**: 2D Pixel Art Keşif ve Dövüş Oyunu
+🧭 **Tür**: 2D Pixel Art Keşif ve Dövüş Oyunu\n
 
+🎮 **Motor**: HTML5 Canvas + JavaScript\n
 
-🎮 **Motor**: HTML5 Canvas + JavaScript
-
-
-🎨 **Tema**: Uzaydan dünyaya düşen karakterin son savaşı, karakter seçimli retro RPG hissiyatı
-
+🎨 **Tema**: Uzaydan dünyaya düşen karakterin son savaşı, karakter seçimli retro RPG hissiyatı\n
 
 🔗 **Canlı Oyna**: [https://ozay-mehmet.github.io/JSGame/](https://ozay-mehmet.github.io/JSGame/)
 
