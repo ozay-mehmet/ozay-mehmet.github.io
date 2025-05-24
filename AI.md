@@ -173,4 +173,32 @@ case 'settings':
 	else if (this.settingsElements.fullscreenToggle && this.isInside(x, y, this.settingsElements.fullscreenToggle)) {
           this.toggleFullscreen();
         }
+
+Prompt 8:
+
+
+if (currentFrameImage && !currentFrameImage.complete) {
+        currentFrameImage.onload = () => { this.initialImageLoaded = true; };
+      } else if (!this.initialImageLoaded && this.image && !this.image.complete) {
+        this.image.onload = () => { this.initialImageLoaded = true; };
+      }
+yukarıdaki kodumda framelerin yüklenmesini istiyorum ama yüklenmiyor sorun nedir
+
+Çıktı 8:
+
+onload sadece görsel henüz tam yüklenmemişken atanırsa işe yarar. Eğer complete === true ise onload hiç tetiklenmez. Bu durumda onload'u çok geç atıyorsundur.
+
+if (currentFrameImage) {
+  if (currentFrameImage.complete) {
+    this.initialImageLoaded = true;
+  } else {
+    currentFrameImage.onload = () => { this.initialImageLoaded = true; };
+  }
+} else if (this.image) {
+  if (this.image.complete) {
+    this.initialImageLoaded = true;
+  } else {
+    this.image.onload = () => { this.initialImageLoaded = true; };
+  }
+}
 ---
