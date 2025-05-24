@@ -15,7 +15,11 @@
 
 ### 📸 Ekran Görüntüleri
 
+Ana Menü 
+
 ![Ana Menü](https://github.com/ozay-mehmet/ozay-mehmet.github.io/blob/main/JSGame/assets/screenshots/menu-screen.png)
+
+Oyun Ekranı
 
 ![Oyun Ekranı](https://github.com/ozay-mehmet/ozay-mehmet.github.io/blob/main/JSGame/assets/screenshots/game-screen.png)
 
