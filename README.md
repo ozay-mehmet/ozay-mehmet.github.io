@@ -5,7 +5,7 @@
 🧭 **Tür**: 2D Pixel Art Keşif ve Dövüş Oyunu
 🎮 **Motor**: HTML5 Canvas + JavaScript
 🎨 **Tema**: Uzaydan dünyaya düşen karakterin son savaşı, karakter seçimli retro RPG hissiyatı
-🔗 **Canlı Oyna**: [https://ozay-mehmet.github.io/JSGame/](http://ozay-mehmet.github.io/JSGame/)
+🔗 **Canlı Oyna**: [https://ozay-mehmet.github.io/JSGame/](https://ozay-mehmet.github.io/JSGame/)
 
 ---
 
