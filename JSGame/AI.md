@@ -201,4 +201,44 @@ if (currentFrameImage) {
     this.image.onload = () => { this.initialImageLoaded = true; };
   }
 }
+
+Prompt 9: 
+
+this.enemyAttackSound = new Audio("./assets/audio/enemy-attack.wav");
+          this.enemyAttackSound.volume = 0.05;
+          this.enemyAttackSound.play();
+
+          düşman saldırdığında ses güzel çıkmıyor bunun sebebi nedir ve sesin daha güzel çıkması için ne yapmalıyım
+
+Çıktı 9: 
+
+Düşman saldırdığında sesin güzel çıkmamasının sebebi, her saldırıda yeni bir Audio nesnesi oluşturulmasıdır. Bu, sesin üst üste binmesine veya gecikmeli çalmasına neden olabilir. Ayrıca, kısa ses efektlerinde Audio nesnesini tekrar tekrar oluşturmak yerine, bir tane oluşturup her seferinde başa sararak (currentTime = 0) çalmak daha doğrudur.
+
+
+class GameEngine {
+  constructor(config) {
+    // ...existing code...
+    this.enemyAttackSound = new Audio("./assets/audio/enemy-attack.wav");
+    this.enemyAttackSound.volume = 0.05;
+    // ...existing code...
+  }
+  // ...existing code...
+  update() {
+    // ...existing code...
+    for (let i = this.enemies.length - 1; i >= 0; i--) {
+      const enemy = this.enemies[i];
+      // ...existing code...
+      if (enemy.collidesWith(this.player)) {
+        // ...existing code...
+        } else if (!this.player.isAttacking && enemy.isAttacking) {
+          this.player.takeDamage(enemy.damage);
+          this.enemyAttackSound.currentTime = 0; // Başa sar
+          this.enemyAttackSound.play();
+        }
+      }
+    }
+    // ...existing code...
+  }
+  // ...existing code...
+}
 ---
