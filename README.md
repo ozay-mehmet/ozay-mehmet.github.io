@@ -14,7 +14,7 @@
 
 ## 🔥 Genel Bakış
 
-“Sailing the Celestial Abyss”, oyuncunun kendi karakterini seçip yıldızlarla dolu gizemli bir evrende keşfe çıktığı bir oyundur. Basit dövüş mekanikleri ve etkileyici piksel sanat ile retro bir atmosfer sunar.To Seal Upon A Sea of Stars oyunu ilham alınarak tasarlanmıştır.
+“Sailing the Celestial Abyss”, oyuncunun kendi karakterini seçip yıldızlarla dolu gizemli bir evrenden dünyaya keşfe çıktığı bir oyundur. Basit dövüş mekanikleri ve etkileyici piksel sanat ile retro bir atmosfer sunar.To Seal Upon A Sea of Stars oyunu ilham alınarak tasarlanmıştır.
 
 ### 📸 Ekran Görüntüleri
 
