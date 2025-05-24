@@ -1,4 +1,4 @@
-# 🌌 **Sailing the Celestial Abyss**!
+# 🌌 To Seal Upon A Sea of Stars!
 
 > *A pixel-art adventure through the stars. Narrative-rich, action-packed, and beautifully nostalgic.*
 
