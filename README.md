@@ -5,7 +5,7 @@
 🧭 **Tür**: 2D Pixel Art Keşif ve Dövüş Oyunu
 🎮 **Motor**: HTML5 Canvas + JavaScript
 🎨 **Tema**: Uzaydan dünyaya düşen karakterin son savaşı, karakter seçimli retro RPG hissiyatı
-🔗 **Canlı Oyna**: [http://ozay-mehmet.github.io/JSGame/](http://ozay-mehmet.github.io/JSGame/)
+🔗 **Canlı Oyna**: [https://ozay-mehmet.github.io/JSGame/](http://ozay-mehmet.github.io/JSGame/)
 
 ---
 
@@ -15,12 +15,9 @@
 
 ### 📸 Ekran Görüntüleri
 
-Ana menü ekranı:
+![Ana Menü](assets/screenshots/menu-screen.png)
 
-![Ana Menü](![1748088736235](assets/screenshots/menu-screen.png))
-
-Yükleme ekranı:
-![Yükleme Ekranı](![1748088736235](image/To_Seal_Upon_A_Sea_of_Stars_FINAL_README/1748088736235.png))
+![Oyun Ekranı](assets/screenshots/game-screen.png)
 
 ---
 
