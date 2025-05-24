@@ -42,6 +42,12 @@ Oyun Ekranı
 
 ---
 
+## 🕹️ Oynanış Videosu
+
+[Youtube](https://www.youtube.com/watch?v=uF9hmvwdkF8)
+
+---
+
 ## 🎨 Kullanılan Assetler
 
 ### 📦 Grafikler
