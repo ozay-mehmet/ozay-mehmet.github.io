@@ -27,7 +27,7 @@ class GameEngine {
 
     // düşman saldırısı için ses
     this.enemyAttackSound = new Audio("./assets/audio/enemy-attack.wav");
-    this.enemyAttackSound.volume = 0.05;
+    this.enemyAttackSound.volume = 0.08;
 
     this.score = 0;
     this.gameOver = false;
