@@ -473,6 +473,8 @@ class Player {
         return;
       }
     }
+
+    // animasyon güncellemesi
     this.frameCounter++;
     if (this.frameCounter >= this.animationSpeed) {
       this.frameCounter = 0;
@@ -490,6 +492,8 @@ class Player {
         }
       }
     }
+
+    // karakterin ölmeyecek şekilde hareket etmesi
     if (!this.isDead || (this.isDead && this.currentAnimationName === 'death' && this.y < canvasHeight - this.height - Player.GROUND_Y_OFFSET)) {
       this.x += this.velocityX;
       this.y += this.velocityY;
@@ -508,6 +512,8 @@ class Player {
         }
       }
     }
+
+    // karakterin hareket etmediğinde durmasının sağlannması 
     if (!this.isAttacking && !this.isJumping && !this.isDead) {
       if (this.velocityX !== 0) {
         if (this.currentAnimationName !== 'walk') this.setCurrentAnimation('walk');
