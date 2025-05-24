@@ -170,6 +170,9 @@ class GameEngine {
           }
         } else if (!this.player.isAttacking && enemy.isAttacking) { // Oyuncu saldırmıyorsa ve düşman saldırıyorsa
           this.player.takeDamage(enemy.damage);
+          this.enemyAttackSound = new Audio("./assets/audio/enemy-attack.mp3");
+          this.enemyAttackSound.volume = 0.2;
+          this.enemyAttackSound.play();
         }
       }
     }
