@@ -27,13 +27,13 @@ Oyun Ekranı
 
 ## 🕹️ Nasıl Oynanır?
 
-| Tuş  | İşlev                              |
-| ----- | ------------------------------------ |
-| ← → | Karakteri sola/sağa hareket ettirir |
-| W     | Zıplama                             |
-| F     | Saldırı                            |
-| ESC   | Ana menüye dön                     |
-| Mouse | Menüde seçim yapar                 |
+| Tuş        | İşlev                              |
+| ----------- | ------------------------------------ |
+| ← → / A D | Karakteri sola/sağa hareket ettirir |
+| W           | Zıplama                             |
+| F           | Saldırı                            |
+| ESC         | Ana menüye dön                     |
+| Mouse       | Menüde seçim yapar                 |
 
 > Oyuna karakter seçerek başlarsınız. Düşmanlar rastgele hareket eder veya saldırır. Her zafer, oyunda ilerlemenizi sağlar.
 
