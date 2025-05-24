@@ -223,8 +223,8 @@ class GameLauncher {
 
     const btnWidth = 250, btnHeight = 60;
     this.buttons = {
-      start: { x: this.width / 2 - btnWidth / 2, y: this.height / 2, width: btnWidth, height: btnHeight, text: "Oyuna Başla" },
-      settings: { x: this.width / 2 - btnWidth / 2, y: this.height / 2 + 80, width: btnWidth, height: btnHeight, text: "Ayarlar" },
+      start: { x: this.width / 2 - btnWidth / 2, y: this.height / 2, width: btnWidth, height: btnHeight, text: "Play Game" },
+      settings: { x: this.width / 2 - btnWidth / 2, y: this.height / 2 + 80, width: btnWidth, height: btnHeight, text: "Settings" },
       prevChar: { x: this.width / 2 - 200 - 50, y: this.height / 2 - 150, width: 50, height: 50, text: "◄" },
       nextChar: { x: this.width / 2 + 200, y: this.height / 2 - 150, width: 50, height: 50, text: "►" },
       menuFromGame: { x: 20, y: 20, width: 100, height: 40, text: "Menü" }
