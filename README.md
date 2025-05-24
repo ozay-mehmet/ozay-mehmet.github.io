@@ -15,9 +15,9 @@
 
 ### 📸 Ekran Görüntüleri
 
-![Ana Menü](./assets/screenshots/menu-screen.png)
+![Ana Menü](../assets/screenshots/menu-screen.png)
 
-![Oyun Ekranı](./assets/screenshots/game-screen.png)
+![Oyun Ekranı](../assets/screenshots/game-screen.png)
 
 ---
 
