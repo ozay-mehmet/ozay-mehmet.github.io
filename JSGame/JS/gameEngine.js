@@ -25,6 +25,10 @@ class GameEngine {
     ];
     this.backgroundImage = new Image();
 
+    // düşman saldırısı için ses
+    this.enemyAttackSound = new Audio("./assets/audio/enemy-attack.wav");
+    this.enemyAttackSound.volume = 0.05;
+
     this.score = 0;
     this.gameOver = false;
     this.gameWon = Enemy.ENEMY_COUNT <= 0;
@@ -170,8 +174,7 @@ class GameEngine {
           }
         } else if (!this.player.isAttacking && enemy.isAttacking) { // Oyuncu saldırmıyorsa ve düşman saldırıyorsa
           this.player.takeDamage(enemy.damage);
-          this.enemyAttackSound = new Audio("./assets/audio/enemy-attack.mp3");
-          this.enemyAttackSound.volume = 0.2;
+          this.enemyAttackSound.currentTime = 0; // Sesin baştan çalmasını sağla
           this.enemyAttackSound.play();
         }
       }
