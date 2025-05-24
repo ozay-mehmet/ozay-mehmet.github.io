@@ -53,6 +53,7 @@ canvas {
     transition: width 0.3s;
 }
 
+/* responsive ayarı */
 @media (max-width: 900px) {
     canvas {
         width: 100vw !important;
